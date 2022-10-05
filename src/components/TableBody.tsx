@@ -2,7 +2,7 @@
 import { Column } from '../common/interfaces';
 
 // Utils
-import { getPropByString } from '../utils/getPropByString';
+import { getNestedProperty } from '../utils/getNestedProperty';
 
 interface TableBodyProps {
   tableData: any;
@@ -15,7 +15,7 @@ export const TableBody = ({ tableData, columns }: TableBodyProps) => {
         return (
           <tr key={data.id}>
             {columns.map(({ accessor, renderCell }: Column) => {
-              const tData = getPropByString(data, accessor);
+              const tData = getNestedProperty(data, accessor);
               return (
                 <td key={accessor}>
                   {/* this displays default data */}

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Column } from '../common/interfaces';
 
 // Utils
-import { getPropByString } from '../utils/getPropByString';
+import { getNestedProperty } from '../utils/getNestedProperty';
 
 // Sort data asc as default
 const getDefaultSorting = (defaultTableData: any, columns: Column[]) => {
@@ -16,17 +16,17 @@ const getDefaultSorting = (defaultTableData: any, columns: Column[]) => {
       ...filterColumn
     );
 
-    if (getPropByString(a, accessor) === null) return 1;
-    if (getPropByString(b, accessor) === null) return -1;
+    if (getNestedProperty(a, accessor) === null) return 1;
+    if (getNestedProperty(b, accessor) === null) return -1;
     if (
-      getPropByString(a, accessor) === null &&
-      getPropByString(b, accessor) === null
+      getNestedProperty(a, accessor) === null &&
+      getNestedProperty(b, accessor) === null
     )
       return 0;
 
-    const ascending = getPropByString(a, accessor)
+    const ascending = getNestedProperty(a, accessor)
       .toString()
-      .localeCompare(getPropByString(b, accessor).toString(), 'en', {
+      .localeCompare(getNestedProperty(b, accessor).toString(), 'en', {
         numeric: true,
       });
 
@@ -47,17 +47,17 @@ export const useSortableTable = (data: any, columns: Column[]) => {
   const handleSorting = (sortField: string, sortOrder: string) => {
     if (sortField) {
       const sorted = [...tableData].sort((a, b) => {
-        if (getPropByString(a, sortField) === null) return 1;
-        if (getPropByString(b, sortField) === null) return -1;
+        if (getNestedProperty(a, sortField) === null) return 1;
+        if (getNestedProperty(b, sortField) === null) return -1;
         if (
-          getPropByString(a, sortField) === null &&
-          getPropByString(b, sortField) === null
+          getNestedProperty(a, sortField) === null &&
+          getNestedProperty(b, sortField) === null
         )
           return 0;
         return (
-          getPropByString(a, sortField)
+          getNestedProperty(a, sortField)
             .toString()
-            .localeCompare(getPropByString(b, sortField).toString(), 'en', {
+            .localeCompare(getNestedProperty(b, sortField).toString(), 'en', {
               numeric: true,
             }) * (sortOrder === 'asc' ? 1 : -1)
         );
