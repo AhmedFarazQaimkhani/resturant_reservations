@@ -15,6 +15,7 @@ so that they can take action on them.
 - Using JSON Server for mock api
 - Axios
 - React Routing Dom
+- Vite
 
 ## Setup
 
