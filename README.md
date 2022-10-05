@@ -80,7 +80,7 @@ main -> contains latest changes
 ## Challanges faced and Decision Taken
 
 - Having issues of date in Reservations Json showing dates of 2018 updated those dates to 2022.
-- Upcoming reservations I think should be any of present/after current time not for tomorrow only. 
+- Upcoming reservations I think should be any of present/after current time not for upcoming days only. 
 - If its a requirement we just need to update a code on Reservation.tsx at line 46.
 
 ## About Me
