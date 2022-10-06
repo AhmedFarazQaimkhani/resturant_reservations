@@ -77,12 +77,6 @@ main -> contains latest changes
 
 - React Query to cache data
 
-## Challanges faced and Decision Taken
-
-- Having issues of date in Reservations Json showing dates of 2018 updated those dates to 2022.
-- Upcoming reservations I think should be any of present/after current time not for upcoming days only. 
-- If its a requirement we just need to update a code on Reservation.tsx at line 46.
-
 ## About Me
 
 _Hi, I'm Ahmed Faraz a BS(CE) graduate working as software developer in the industory for about 4 years, I am an experienced developer skilled in Javascript and its frameworks._

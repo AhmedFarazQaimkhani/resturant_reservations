@@ -43,7 +43,8 @@ export const Reservations = () => {
     try {
       const response = await reservationApiService.getReservations();
       const upcomingReservations = response.filter(
-        (res: any) => res.start >= moment().toISOString()
+        (res: any) =>
+          moment(res.businessDate, 'DD.MM.YYYY').diff(moment(), 'd') > 0
       );
       setReservations(upcomingReservations);
     } catch (error) {
