@@ -1,4 +1,4 @@
-// Packages
+// Components
 import { Reservations } from '../../pages/Reservations';
 
 // Services
