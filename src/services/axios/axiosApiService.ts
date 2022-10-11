@@ -71,9 +71,9 @@ export const axiosApiService = (function () {
       // localStorage.removeItem('user');
     }
     // we can show error toast from here
-    toast.error(error?.response?.data?.error);
+    toast.error(error?.response?.statusText);
 
-    return await Promise.reject(error?.response?.data?.error);
+    return await Promise.reject(error?.response?.statusText);
   };
 
   apiCoreServiceInstance.interceptors.response.use(
