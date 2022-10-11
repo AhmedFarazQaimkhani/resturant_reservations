@@ -58,6 +58,7 @@ export const Reservations = () => {
   }, []);
 
   // Search data if user search any value
+  // We would use debounce here when we are getting data from server
   const searchedData = () => {
     const filteredReservations = reservations?.filter(
       (reservation: Reservation) =>
