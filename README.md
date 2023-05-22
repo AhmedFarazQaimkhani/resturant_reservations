@@ -26,7 +26,7 @@ Following instructions will get you a copy of the project up and running on your
     - [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com))
 2.  Clone the repository by running this following command
     ```bash
-    git clone https://github.com/AhmedFarazQaimkhani/yassir_frontend_challenge
+    git clone https://github.com/AhmedFarazQaimkhani/resturant_reservations
     ```
 3.  Start project by running following commands
 
